@@ -6,12 +6,17 @@ python:
 install:
   pip install pylint pylint-exit
 
-script:
-  # convert the exit code from pylint into a standard error code
-  pylint main.py || pylint-exit $?
+jobs:
+  include:
+    - stage: lint
+      script:
+        # convert the exit code from pylint into a standard error code
+        pylint main.py || pylint-exit $?
 
-  # run unit tests
-  #python -m unittest -v
+    - stage: test
+      script:
+        # run unit tests
+        python -m unittest -v
 
 notifications:
   slack:
