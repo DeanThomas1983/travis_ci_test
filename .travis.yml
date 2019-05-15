@@ -4,10 +4,11 @@ python:
   - "3.7"
 
 install:
-  pip install pylint
+  pip install pylint pylint-exit
 
 script:
-  pylint main.py
+  # convert the exit code from pylint into a standard error code
+  pylint main.py || pylint-exit $?
 
 notifications:
   slack:
