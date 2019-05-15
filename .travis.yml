@@ -10,6 +10,9 @@ script:
   # convert the exit code from pylint into a standard error code
   pylint main.py || pylint-exit $?
 
+  # run unit tests
+  python -m unittest -v
+
 notifications:
   slack:
     rooms:
