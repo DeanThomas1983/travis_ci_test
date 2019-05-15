@@ -3,8 +3,11 @@ language: python
 python:
   - "3.7"
 
+install:
+  pip install pylint
+
 script:
-  python3 main.py
+  pylint main.py
 
 notifications:
   slack:
