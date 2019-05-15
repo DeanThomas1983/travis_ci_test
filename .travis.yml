@@ -5,3 +5,9 @@ python:
 
 script:
   python3 main.py
+
+notifications:
+  slack:
+    rooms:
+      - deans-group-hq:j0qLDOwvvpw4S4nQRp0NJeUT
+      - deans-group-hq:j0qLDOwvvpw4S4nQRp0NJeUT#travis
