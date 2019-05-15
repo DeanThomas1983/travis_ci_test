@@ -11,7 +11,7 @@ script:
   pylint main.py || pylint-exit $?
 
   # run unit tests
-  python -m unittest -v
+  #python -m unittest -v
 
 notifications:
   slack:
